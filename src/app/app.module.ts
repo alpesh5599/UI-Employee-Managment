@@ -20,6 +20,9 @@ import { ResumeUploaderComponent } from './resume-uploader/resume-uploader.compo
 import { SetInterviewComponent } from './set-interview/set-interview.component';
 import { UpdateInterviewDetailsComponent } from './update-interview-details/update-interview-details.component';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
     GetScheduledInterviewDetailsComponent,
     UpdateInterviewDetailsComponent,
     EmployeeModuleComponent,
-    ResumeUploaderComponent
+    ResumeUploaderComponent,
+    LoginComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,8 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
     MatMenuModule,
     MatTooltipModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    
 
   ],
   providers: [

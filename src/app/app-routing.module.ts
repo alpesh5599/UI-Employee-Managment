@@ -9,17 +9,19 @@ import { GetScheduledInterviewDetailsComponent } from './get-scheduled-interview
 import { UpdateInterviewDetailsComponent } from './update-interview-details/update-interview-details.component';
 import { EmployeeModuleComponent } from './employee-module/employee-module.component';
 import { ResumeUploaderComponent } from './resume-uploader/resume-uploader.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path:"", component:HomeComponent },
-  { path:"candidate", component:CandidateComponent },
-  { path:"getCandidate", component:GetCandidateComponent},
-  { path:"editCandidate", component:EditCandidateComponent},
-  { path:"setInterview", component:SetInterviewComponent },
-  { path:"getInterviewDetails", component:GetScheduledInterviewDetailsComponent },
-  { path:"updateInterviewDetails", component:UpdateInterviewDetailsComponent },
-  { path:"employeeModule", component:EmployeeModuleComponent },
-  { path:"file", component:ResumeUploaderComponent }
+  { path: "", redirectTo: '/login', pathMatch: 'full' },
+  { path: "login", component: LoginComponent },
+  { path: "candidate", component: CandidateComponent },
+  { path: "getCandidate", component: GetCandidateComponent },
+  { path: "editCandidate", component: EditCandidateComponent },
+  { path: "setInterview", component: SetInterviewComponent },
+  { path: "getInterviewDetails", component: GetScheduledInterviewDetailsComponent },
+  { path: "updateInterviewDetails", component: UpdateInterviewDetailsComponent },
+  { path: "employeeModule", component: EmployeeModuleComponent },
+  { path: "file", component: ResumeUploaderComponent }
 
 ];
 

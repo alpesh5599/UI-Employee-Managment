@@ -50,10 +50,9 @@ export class CandidateComponent implements OnInit {
       this.candidate.fileName = this.file.name;
       this.candidate.comments = formValue.comments;
     }
+
     this.candidateService.saveCandidateData(this.candidate, this.file).subscribe((res:HttpResponse<any>) => {
-       if (res.status == HttpStatusCode.Created) {
-        
-       }
+      alert("Candidate Registered...");
     })
   }
 
