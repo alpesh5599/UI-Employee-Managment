@@ -33,7 +33,9 @@ export class CandidateComponent implements OnInit {
       comments: new FormControl(),
       file: new FormControl()
     })
+    this.openPDF();
   }
+
 
   submitDetails() {
     
@@ -64,5 +66,23 @@ export class CandidateComponent implements OnInit {
       this.file = a;
       console.log("==> "+this.file);
     }
+  }
+
+   openPDF() {
+    
+    let response = this.base64ToArrayBuffer("JVBERi0xLjQKJfbk/N8KMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKL01ldGFkYXRhIDMgMCBSCj4CmVuZG9iago0IDAgb2JqCjw8Cj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9UeXBlIC9QYWdlcwovQ291bnQgMjMKL0tpZHMgWzUgMCBSIDYgMCBSIDcgMCBSXQoPgplbmRvYmoKMyAwIG9iago8PAovTGVuZ3RoIDAKL1R5cGUgL01ldGFkYXRhCi9TdWJ0eXBlIC9YTUwKPj4Kc3RyZWFtDQoNCmVuZHN0cmVhbQplbmRvYmoKNSAw");
+    let file = new Blob([response], { type: 'application/pdf' });            
+    var fileURL = URL.createObjectURL(file);
+    window.open(fileURL);
+    
+  }
+  base64ToArrayBuffer(base64: string) {
+    var binary_string =  window.atob(base64);
+      var len = binary_string.length;
+      var bytes = new Uint8Array( len );
+      for (var i = 0; i < len; i++)        {
+          bytes[i] = binary_string.charCodeAt(i);
+      }
+      return bytes.buffer;
   }
 }
