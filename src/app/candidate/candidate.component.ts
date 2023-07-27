@@ -18,6 +18,7 @@ export class CandidateComponent implements OnInit {
   
   file!:Blob;
   candidate =  new CandidateModel();
+  // fileData: Uint8Array;
 
   constructor(private candidateService: CandidateService, private router: Router, private _snackBar: MatSnackBar) { }
   
@@ -69,11 +70,11 @@ export class CandidateComponent implements OnInit {
   }
 
    openPDF() {
-    
-    let response = this.base64ToArrayBuffer("JVBERi0xLjQKJfbk/N8KMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKL01ldGFkYXRhIDMgMCBSCj4CmVuZG9iago0IDAgb2JqCjw8Cj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9UeXBlIC9QYWdlcwovQ291bnQgMjMKL0tpZHMgWzUgMCBSIDYgMCBSIDcgMCBSXQoPgplbmRvYmoKMyAwIG9iago8PAovTGVuZ3RoIDAKL1R5cGUgL01ldGFkYXRhCi9TdWJ0eXBlIC9YTUwKPj4Kc3RyZWFtDQoNCmVuZHN0cmVhbQplbmRvYmoKNSAw");
-    let file = new Blob([response], { type: 'application/pdf' });            
-    var fileURL = URL.createObjectURL(file);
-    window.open(fileURL);
+    // this.fileData = new Uint8Array([37, 80, 68, 70, 45, 49, 46, 52, 13, 37, 226, 227, 207, 211, 10]);
+    // let response = this.base64ToArrayBuffer("JVBERi0xLjQKJfbk/N8KMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKL01ldGFkYXRhIDMgMCBSCj4CmVuZG9iago0IDAgb2JqCjw8Cj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9UeXBlIC9QYWdlcwovQ291bnQgMjMKL0tpZHMgWzUgMCBSIDYgMCBSIDcgMCBSXQoPgplbmRvYmoKMyAwIG9iago8PAovTGVuZ3RoIDAKL1R5cGUgL01ldGFkYXRhCi9TdWJ0eXBlIC9YTUwKPj4Kc3RyZWFtDQoNCmVuZHN0cmVhbQplbmRvYmoKNSAw");
+    // let file = new Blob([response], { type: 'application/pdf' });            
+    // var fileURL = URL.createObjectURL(file);
+    // window.open(fileURL);
     
   }
   base64ToArrayBuffer(base64: string) {
